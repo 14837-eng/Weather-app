@@ -1,0 +1,18 @@
+
+$header-height: 6.5rem;
+.header
+{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: $header-height;
+    background: var(--accent-color);
+}
+
+
+.main
+{
+}

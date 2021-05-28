@@ -1,0 +1,50 @@
+
+.header
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    &__brand
+    {
+        width: 5rem;
+        & > img 
+        {
+            width: 100%;
+        }
+    }
+    &__nav
+    {}
+}
+
+
+.menu
+{
+    display: flex;
+    &__item
+    {
+        & + &
+        {
+            margin-left: 1rem;
+        }
+    }
+    &__link
+    {
+        &_active > .menu__btn
+        {
+            background: #ffffff55;
+        }
+    }
+
+    &__btn
+    {
+        text-transform: lowercase;
+        font-size: 1.6rem;
+        color: white;
+        transition: .3s ease;
+        &:hover 
+        {
+            background: #ffffff55;
+        }
+    }
+}

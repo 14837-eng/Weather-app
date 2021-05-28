@@ -1,0 +1,21 @@
+
+<div class="header">
+
+    <a class="header__brand" routerLink="/">
+        <img src="assets/svg/cloud.svg" alt="">
+    </a>
+
+    <nav class="header__nav">
+        <ul class="menu">
+            <li class="menu__item" *ngFor="let item of menu">
+                <a class="menu__link"
+                   [routerLink]="item.link"
+                   routerLinkActive="menu__link_active">
+                   
+                   <button class="menu__btn" mat-button>{{item.name}}</button>
+                   
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

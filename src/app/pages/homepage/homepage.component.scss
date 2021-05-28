@@ -1,0 +1,55 @@
+
+.home
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    &__picture
+    {
+        width: 25rem;
+    }
+    &__title
+    {
+        font-size: 3rem;
+        color: black;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    &__subtitle
+    {
+        font-size: 2rem;
+        margin-bottom: 5rem;
+        color: black;
+    }
+
+    &__menu
+    {
+        display: flex;
+    }
+
+    &__item
+    {
+        & + &
+        {
+            margin-left: 2rem;
+        }
+    }
+
+    &__link
+    {
+
+    }
+
+    &__btn
+    {
+        transition: .3s;
+        &:hover 
+        {
+            color: white;
+            background: var(--accent-color);
+        }
+    }
+}

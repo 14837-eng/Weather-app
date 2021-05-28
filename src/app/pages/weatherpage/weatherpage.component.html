@@ -1,0 +1,31 @@
+<div class="weather">
+    <h1 class="weather__title">Погода</h1>
+    <p class="weather__subtitle">Введите название города чтобы узнать погоду</p>
+
+    <form class="form" 
+          [formGroup]="formGroup"
+          (submit)="getTime()">
+        <input class="form__input"
+               type="text" 
+               placeholder="Город"
+               formControlName="city">
+
+        <button class="form__submit"
+                mat-raised-button>Узнать</button>
+    </form>
+
+
+    <ng-container *ngIf="weatherResult.city">
+      <ul class="weather__list">
+        <li class="weather__item">Название: {{weatherResult.city}}</li>
+        <li class="weather__item">Скорость ветра: {{weatherResult.windSpeed}} м/с</li>
+        <li class="weather__item">Погода: {{weatherResult.cloud}}</li>
+      </ul>
+    </ng-container>
+
+    <ng-container *ngIf="error">
+      <p class="error">
+        Ошибка! Проверьте введенные данные
+      </p>
+    </ng-container>
+</div>
