@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 interface Weather 
 {
@@ -39,13 +40,14 @@ export class WeatherpageComponent implements OnInit
   getTime()
   {
     if(this.formGroup.invalid) return;
-    const city = this.formGroup.get("city").value;
-    const key: string = "f078be57f322fe24acd401ff8db4868e";
-    const lang: string = "ru";
+
+    const url = environment.weatherApi.url,
+          city = this.formGroup.get("city").value,
+          key: string = environment.weatherApi.key
 
     this.weatherResult.city = "";
 
-    this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=${lang}`)
+    this.http.get(`${url}?q=${city}&appid=${key}&lang=ru`)
     .subscribe((res: any) =>
     {
       console.log(res);
